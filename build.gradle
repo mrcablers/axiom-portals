@@ -1,0 +1,71 @@
+plugins {
+	id 'fabric-loom' version '1.3.10'
+	id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+	mavenCentral()
+	maven { url = "https://maven.fabricmc.net/" }
+	maven { url = "https://maven.terraformersmc.com/releases" }
+	maven { url = "https://api.modrinth.com/maven" }
+}
+
+dependencies {
+	// Minecraft & Mappings
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+
+	// Fabric
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+
+loom {
+	mixin {
+		defaultRefmapName = "axiom_portals.refmap.json"
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 17
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+	withSourcesJar()
+}
+
+processResources {
+	inputs.property "version", project.version
+	inputs.property "minecraft_version", project.minecraft_version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version,
+			   "minecraft_version": project.minecraft_version
+	}
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}-AXIOM_PORTALS"}
+	}
+}
+
+remapJar {
+	inputFile = tasks.jar.archiveFile
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
+
+	repositories {
+	}
+}

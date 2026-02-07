@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "axiom-portals",
+  "version": "${version}",
+  "name": "Axiom-Portals Compatibility",
+  "description": "Seamless compatibility between Immersive Portals and Axiom mods",
+  "authors": [
+    "AxiomGames"
+  ],
+  "contact": {
+    "website": "https://github.com/mrcablers/axiom-portals",
+    "sources": "https://github.com/mrcablers/axiom-portals"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.axiomportals.AxiomPortalsMain"
+    ],
+    "client": [
+      "com.axiomportals.client.AxiomPortalsClient"
+    ]
+  },
+  "mixins": [
+    "axiom_portals.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "${minecraft_version}"
+  },
+  "suggests": {
+    "immersive-portals": "*",
+    "axiom": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "parent": {
+        "immersive-portals": "immersive-portals handles portals",
+        "axiom": "axiom handles world editing"
+      },
+      "links": {
+        "source": "https://github.com/mrcablers/axiom-portals",
+        "issues": "https://github.com/mrcablers/axiom-portals/issues"
+      }
+    },
+    "axiom-portals": {
+      "compatible_versions": {
+        "immersive-portals": "any",
+        "axiom": "any"
+      },
+      "compatibility_level": "full"
+    }
+  }
+}

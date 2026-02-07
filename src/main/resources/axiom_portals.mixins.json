@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.axiomportals.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "entity.MixinEntity",
+    "entity.MixinServerPlayer",
+    "world.MixinServerWorld",
+    "util.MixinNBTUtil"
+  ],
+  "client": [
+    "client.MixinGameRenderer",
+    "client.MixinClientPlayerEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

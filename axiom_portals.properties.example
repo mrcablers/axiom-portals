@@ -1,0 +1,76 @@
+# Axiom-Portals Configuration File
+# Place this file in .minecraft/config/axiom_portals.properties
+# All values are optional - defaults are used if not specified
+
+## ============================================
+## Feature Toggles
+## ============================================
+
+# Preserve Axiom clipboard between dimensions
+enable_clipboard_preservation=true
+
+# Keep Axiom selections active after portal crossing
+enable_selection_persistence=true
+
+# Enable general NBT data preservation
+enable_nbt_preservation=true
+
+# Prevent chunk unloading during portal traversal
+enable_chunk_loading_fix=true
+
+# Fix rendering conflicts between mods
+enable_rendering_compatibility=true
+
+## ============================================
+## Logging & Debugging
+## ============================================
+
+# Enable verbose debug output
+debug_mode=false
+
+# Log all portal traversal events
+log_portal_traversal=false
+
+# Log data preservation operations
+log_data_preservation=false
+
+## ============================================
+## Performance Settings
+## ============================================
+
+# Maximum number of entities to track during traversal
+# Increase if you have many players/entities using portals
+max_traversal_cache_size=1000
+
+# How many ticks before considering traversal abandoned
+# Default 600 = 30 seconds
+traversal_timeout_ticks=600
+
+# Use asynchronous data synchronization when possible
+enable_async_data_sync=true
+
+## ============================================
+## Compatibility Settings
+## ============================================
+
+# Force compatibility mode (workaround for edge cases)
+force_compatibility_mode=false
+
+# Enable Forge version support
+enable_forge_support=true
+
+# Enable Fabric version support
+enable_fabric_support=true
+
+## ============================================
+## Notes
+## ============================================
+# 
+# If you experience issues:
+# 1. Enable debug_mode=true and check logs
+# 2. Enable log_portal_traversal=true for detailed events
+# 3. Reduce max_traversal_cache_size if memory constrained
+# 4. Try enabling force_compatibility_mode for edge cases
+#
+# Report issues at: https://github.com/mrcablers/axiom-portals/issues
+#

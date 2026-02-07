@@ -1,0 +1,38 @@
+# Gradle
+.gradle/
+build/
+out/
+*.class
+*.jar
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.classpath
+.project
+
+# Minecraft
+run/
+run-client/
+run-server/
+.minecraft/
+
+# Environment
+*.env
+local.properties
+
+# Dependencies
+libs/
+
+# Loom cache
+.loom-cache/
