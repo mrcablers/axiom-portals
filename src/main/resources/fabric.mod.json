@@ -32,6 +32,10 @@
     "immersive-portals": "*",
     "axiom": "*"
   },
+  "breaks": {
+  },
+  "conflicts": {
+  },
   "custom": {
     "modmenu": {
       "parent": {
@@ -41,13 +45,19 @@
       "links": {
         "source": "https://github.com/mrcablers/axiom-portals",
         "issues": "https://github.com/mrcablers/axiom-portals/issues"
-      }
+      },
+      "badges": [
+        "client",
+        "server",
+        "library"
+      ]
     },
     "axiom-portals": {
-      "compatible_versions": {
-        "immersive-portals": "any",
-        "axiom": "any"
-      },
+      "compatible_with": [
+        "immersive-portals",
+        "axiom"
+      ],
+      "resolves_conflict": true,
       "compatibility_level": "full"
     }
   }
