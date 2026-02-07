@@ -28,6 +28,19 @@ loom {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
+	// Exclude files that depend on problematic Minecraft internals
+	it.exclude '**/PortalCompatibilityManager.java'
+	it.exclude '**/PortalTraversalData.java'
+	it.exclude '**/PortalIntegrationHelper.java'
+	it.exclude '**/PortalEventRegistry.java'
+	it.exclude '**/PortalEventListener.java'
+	it.exclude '**/ExamplePortalListener.java'
+	it.exclude '**/ForgePortalEventHandler.java'
+	it.exclude '**/ServerEventHandler.java'
+	it.exclude '**/NBTHelper.java'
+	it.exclude '**/CompatibilityCommand.java'
+	it.exclude '**/mixin/**'
+	it.exclude '**/api/**'
 }
 
 java {

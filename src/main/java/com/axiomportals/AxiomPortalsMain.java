@@ -1,7 +1,6 @@
 package com.axiomportals;
 
 import com.axiomportals.config.CompatibilityVerifier;
-import com.axiomportals.command.CompatibilityCommand;
 import com.axiomportals.util.ConflictPatcher;
 
 public class AxiomPortalsMain {
@@ -17,11 +16,5 @@ public class AxiomPortalsMain {
         
         // Verify and suppress incompatibility warnings
         CompatibilityVerifier.verify();
-        
-        // Register compatibility commands
-        CompatibilityCommand.register();
-        
-        // Initialize portal compatibility
-        PortalCompatibilityManager.init();
     }
 }
