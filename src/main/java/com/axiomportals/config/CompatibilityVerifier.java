@@ -83,10 +83,11 @@ public class CompatibilityVerifier {
     private static void patchModMetadata() {
         try {
             FabricLoader loader = FabricLoader.getInstance();
-            Collection<ModMetadata> mods = loader.getAllMods();
+            var mods = loader.getAllMods();
             
             // Check for any conflict declarations and note them
-            for (ModMetadata mod : mods) {
+            for (var modContainer : mods) {
+                ModMetadata mod = modContainer.getMetadata();
                 String id = mod.getId();
                 if (id.equals(AXIOM_ID) || id.equals(IMMERSIVE_PORTALS_ID)) {
                     logInfo("Loaded mod: " + id + " v" + mod.getVersion());
